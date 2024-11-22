@@ -48,11 +48,11 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   min-width: 1480px;
-  height: 100vh;
-  min-height: 100%;
-  padding: 60px 20px 52px;
+  height: 100%;
+  min-height: 100vh;
+  padding: 60px 20px 60px;
   background-image: url(../img/bg.png);
   background-size: cover;
   background-position: center;
@@ -220,6 +220,7 @@ img {
   display: flex;
   width: 100%;
   height: 200%;
+  padding-top: 20px;
   align-items: center;
   justify-content: center;
   font-size: 148px;
@@ -235,29 +236,29 @@ img {
 }
 .count_num li.back .up {
   z-index: 2;
-  animation: top-to-middle .3s .3s linear both;
+  animation: top-to-middle .2s .2s linear both;
 }
 .count_num li.back .up::before {
-  animation: show .3s linear both;
+  animation: show .2s linear both;
   background: linear-gradient(to top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 .count_num li.back .down::before {
-  animation: show .3s linear both;
+  animation: show .2s linear both;
 }
 .count_num li.front {
   z-index: 2;
-  animation: increase-zindex .3s .3s linear forwards;
+  animation: increase-zindex .2s .2s linear forwards;
 }
 .count_num li.front .up::before {
-  animation: hide .3s .3s linear both;
+  animation: hide .2s .2s linear both;
 }
 .count_num li.front .down {
   z-index: 2;
-  animation: middle-to-bottom .3s .3s linear both;
+  animation: middle-to-bottom .2s .2s linear both;
 }
 .count_num li.front .down::before {
-  animation: hide .3s .3s linear both;
+  animation: hide .2s .2s linear both;
   background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
 }

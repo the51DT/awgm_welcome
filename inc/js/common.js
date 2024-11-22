@@ -14,11 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // [start] 카드 넘기기
   const addCard = () => {
     const numDefault = `<ul class="count_num">
-      <li class="back">
-        <div class="up"><div class="num"></div></div>
-        <div class="down"><div class="num"></div></div>
-      </li>
-      <li class="front">
+      <li>
         <div class="up"><div class="num">0</div></div>
         <div class="down"><div class="num">0</div></div>
       </li>
@@ -58,40 +54,50 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="up"><div class="num">9</div></div>
         <div class="down"><div class="num">9</div></div>
       </li>
+      <li>
+        <div class="up"><div class="num"></div></div>
+        <div class="down"><div class="num"></div></div>
+      </li>
     </ul>`;
-    const commaText = `<span class="count_com">,</span>`;
 
     const numWrap = document.querySelector(".count_num_wrap");
     const targetData = numWrap.getAttribute("data-count");
     const targetNum = Array.from(targetData).reverse();
     
+    let cardNum = numWrap.querySelectorAll(".count_num");
+    let cardLength = cardNum.length;
     let cardCount = 0;
     let i = 0;
     let cardInt = setInterval(() => {
-      if (i > targetNum.length - 1) {
+      // console.log(i);
+      if (i === targetNum.length) {
         clearInterval(cardInt);
-        i = 0;
-      } else {
-        const cardNum = numWrap.querySelector(".count_num");
-        const cardNumList = cardNum.querySelectorAll("li");
-        cardNumList[cardCount].classList.add("back");
-        cardNumList[cardCount + 1].classList.add("front");
+      }
+      // 숫자 넘어가기
+      setTimeout(() => {
+        cardNum = numWrap.querySelectorAll(".count_num");
+        const cardNumList = cardNum[cardLength - 1].querySelectorAll("li");
+        if (cardCount > 0) {
+          cardNumList[cardCount - 1].classList.add("back");
+        }
+        cardNumList[cardCount].classList.add("front");
         cardCount++;
         if (cardCount > Number(targetNum[i])) {
           cardCount = 0;
           i++;
-          if (i < targetNum.length) {
-            let counting = setTimeout(() => {
-              if (numWrap.querySelectorAll(".count_num").length % 3 === 0) {
-                numWrap.insertAdjacentHTML("afterbegin", commaText);
-              }
+          if (i < 5) {
+            cardLength--;
+          } else if (i === 5) {
+            console.log(i === 5);
+            setTimeout(() => {
               numWrap.insertAdjacentHTML("afterbegin", numDefault);
-            }, 600);
+            })
+            cardLength = 1;
           }
-          
         }
-      }
-    }, 600);
+      }, 100);
+      // 숫자 넘어가기
+    }, 100);
   };
   addCard();
   // [end] 카드 넘기기
