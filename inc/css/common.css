@@ -133,6 +133,7 @@ img {
 .count_com {
   display: inline-block;
   margin: 0 4px;
+  color: #FCAF17;
 }
 .count_num_wrap .count_num + .count_num {
   margin-left: 8px;
