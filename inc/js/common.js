@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const targetNum = Array.from(targetData).reverse();
     
     let cardNum = numWrap.querySelectorAll(".count_num");
-    let cardAllLength = numWrap.querySelectorAll(".count_num").length;
     let cardLength = cardNum.length;
     let cardCount = 0;
     let i = 0;
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           i++;
           if (i < 5) {
             cardLength--;
-          } else if (i === 5 && cardAllLength > 5) {
+          } else if (i === 5 && targetNum.length > 5) {
             setTimeout(() => {
               numWrap.insertAdjacentHTML("afterbegin", numDefault);
             });
