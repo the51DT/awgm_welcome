@@ -94,9 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
             cardLength = 1;
           }
         }
-      }, 80);
+      }, 60);
       // 숫자 넘어가기
-    }, 80);
+    }, 60);
   };
   addCard();
   // [end] 카드 넘기기
