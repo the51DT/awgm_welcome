@@ -100,4 +100,30 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   addCard();
   // [end] 카드 넘기기
+
+  // date
+  function updateTime(){
+    const year = new Date().getFullYear();
+    const month = new Date().getMonth() + 1;
+    const date = new Date().getDate();
+    const hour = new Date().getHours();
+    const minute = new Date().getMinutes();
+  
+    const yearText = document.getElementById("year");
+    const monthText = document.getElementById("month");
+    const dateText = document.getElementById("date");
+    const hourText = document.getElementById("hour");
+    const minuteText = document.getElementById("minute");
+
+    const format = (num) => (num < 10 ? '0' + num : num);
+  
+    yearText.innerText = year;
+    monthText.innerText = format(month);
+    dateText.innerText = format(date);
+    hourText.innerText = format(hour);
+    minuteText.innerText = format(minute);
+  }
+  setInterval(updateTime, 1500);
+  updateTime();
+  
 });
