@@ -256,8 +256,6 @@ img {
 
 .count_num .down .num {
   bottom: 0;
-  left: -0.2px;
-  /* num이 위치마다 비틀어져있는 현상 */
 }
 
 .count_num .num {
