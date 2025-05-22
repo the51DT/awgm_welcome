@@ -256,6 +256,8 @@ img {
 
 .count_num .down .num {
   bottom: 0;
+  left: -0.2px;
+  /* num이 위치마다 비틀어져있는 현상 */
 }
 
 .count_num .num {
@@ -637,7 +639,6 @@ img {
     letter-spacing: -1px;
     text-align: center;
     vertical-align: middle;
-
   }
 
   .count_text_right {
@@ -647,7 +648,6 @@ img {
     letter-spacing: 0px;
     text-align: right;
     vertical-align: middle;
-
   }
 
   .count_text_right span {
@@ -661,7 +661,6 @@ img {
 
   .date-wrap{
     display: flex;
-
   }
 
   .date-wrap p{
