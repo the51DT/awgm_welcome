@@ -125,5 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setInterval(updateTime, 1500);
   updateTime();
-  
+
 });
