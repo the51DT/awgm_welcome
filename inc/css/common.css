@@ -73,6 +73,11 @@ img {
   background-size: cover;
   background-position: center;
 }
+.close-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
 .title_wrap {
   display: flex;
